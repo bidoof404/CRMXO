@@ -60,7 +60,7 @@
     
     if ( !isset($_POST['username'], $_POST['psw']) ) {
       // Could not get the data that should have been sent.
-      exit('Please fill both the username and password fields!');
+      exit('<br></br>Please fill both the username and password fields!');
     }
     
     // Prepare our SQL, preparing the SQL statement will prevent SQL injection.

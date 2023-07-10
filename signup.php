@@ -53,5 +53,31 @@
 </html>
 
 <?php
-    //this is where the registration php code will go
-?>
+    // Change this to your connection info.
+    $DATABASE_HOST = 'localhost';
+    $DATABASE_USER = 'root';
+    $DATABASE_PASS = '';
+    $DATABASE_NAME = 'CRM_Test';
+    // Try and connect using the info above.
+    $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
+    if ( mysqli_connect_errno() ) {
+      // If there is an error with the connection, stop the script and display the error.
+      exit('Failed to connect to MySQL: ' . mysqli_connect_error());
+    }
+    
+    if ( !isset($_POST['email'],$_POST['username'], $_POST['psw']) ) {
+      // Could not get the data that should have been sent.
+      exit('<br></br>Please fill the username, email and password fields.');
+    }
+    $username = ($_POST['username']);
+    $email = ($_POST['email']);
+    $psw = ($_POST['psw']);
+    $encrypted_psw = crypt($psw, 'salt');
+    // Prepare our SQL, preparing the SQL statement will prevent SQL injection.
+    if ($stmt = $con->prepare("INSERT INTO tblUser (txtUsername, txtEmail, txtPassword) VALUES ('$username','$email','$encrypted_psw')")){
+      // Bind parameters (s = string, i = int, b = blob, etc), in our case the username is a string so we use "s"
+
+      $stmt->execute();
+      // Store the result so we can check if the account exists in the database.
+      $stmt->close();
+    }
