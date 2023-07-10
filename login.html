@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<title>Login</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="stylesheet.css" href="/images/favicon.ico">
+<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+<body>
+
+<!-- Navigation Bar -->
+
+<ul>
+    <li><a href="index.html" class="nav-bar-item">Home</a></li>
+    <li><a href="news.html" class="nav-bar-item">News</a></li>
+    <li style="float:right; background-color: green; color: black;"><a href="login.html" class="nav-bar-item">Login</a></li>
+    <li style="float:right;"><a href="signup.html" class="nav-bar-item">Sign Up</a></li>
+</ul>
+
+<loginform>
+    <h1>Log In</h1>
+    <hr>
+    <label for="email"><b>Email or Username</b></label>
+    <br>
+    <input type="text" placeholder="Enter Email or Username" name="email" required>
+    <br>
+    <label for="psw"><b>Password</b></label>
+    <br>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+    <br>
+    <label>
+      <input type="checkbox" name="remember" style="margin-bottom:15px"> Remember me
+    </label>
+
+
+    <div class="clearfix">
+      <button type="button" onclick="location.href='index.html'" class="cancelbtn">Cancel</button>
+      <button type="submit" class="signupbtn">Sign Up</button>
+    </loginform>
+
+
+
+</body>
+</html>
