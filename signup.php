@@ -10,13 +10,14 @@
 <!-- Navigation Bar -->
 
 <ul>
-    <li><a href="index.html" class="nav-bar-item">Home</a></li>
-    <li><a href="news.html" class="nav-bar-item">News</a></li>
-    <li style="float:right;"><a href="login.html" class="nav-bar-item">Login</a></li>
-    <li style="float:right; background-color: green; color: black;"><a href="signup.html" class="nav-bar-item">Sign Up</a></li>
+    <li><a href="profile.php" class="nav-bar-item">Profile</a></li>
+    <li><a href="index.php" class="nav-bar-item">Home</a></li>
+    <li><a href="news.php" class="nav-bar-item">News</a></li>
+    <li style="float:right;"><a href="login.php" class="nav-bar-item">Login</a></li>
+    <li style="float:right; background-color: green; color: black;"><a href="signup.php" class="nav-bar-item">Sign Up</a></li>
 </ul>
 
-        <form action="connect.php" method="post">
+    <form method="post">
         <signupform>
         <h1>Sign Up</h1>
         <p>Please fill in this form to create an account.</p>
@@ -40,13 +41,17 @@
           <input type="checkbox" name="remember" style="margin-bottom:15px"> Remember me
         </label>
   
-        <p>By creating an account you agree to our <a href="termsandprivacy.html" style="color:dodgerblue">Terms & Privacy</a>.</p>
+        <p>By creating an account you agree to our <a href="termsandprivacy.php" style="color:dodgerblue" target="_blank">Terms & Privacy</a>.</p>
   
         <div class="clearfix">
-          <button type="button" onclick="location.href='index.html'" class="cancelbtn">Cancel</button>
-          <button type="submit" class="signupbtn">Sign Up</button>
+          <button type="button" onclick="location.href='index.php'" class="cancelbtn">Cancel</button>
+          <button type="submit" class="signupbtn" name="signupbtn">Sign Up</button>
         </signupform>
     </form>
 
 </body>
 </html>
+
+<?php
+    //this is where the registration php code will go
+?>
