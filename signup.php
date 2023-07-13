@@ -81,3 +81,4 @@
       // Store the result so we can check if the account exists in the database.
       $stmt->close();
     }
+?>
