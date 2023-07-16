@@ -21,10 +21,15 @@ if (!isset($_SESSION['loggedin'])) {
     <li><a href="news.php" class="nav-bar-item">News</a></li>
 	<?php
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-		echo "<li style=\"background-color: green; color: black;\"><a href=\"tickets.php\" class=\"nav-bar-item\">Tickets</a></li>";
+        echo "<li><a href=\"tickets.php\" class=\"nav-bar-item\">Tickets</a></li>";
 		echo "<li><a href=\"createticket.php\" class=\"nav-bar-item\">Create Ticket</a></li>";
-		echo "<li><a href=\"ticketview.php\" class=\"nav-bar-item\">Ticket View</a></li>";
+        echo "<li style=\"background-color: green; color: black;\"><a href=\"ticketview.php\" class=\"nav-bar-item\">Ticket View</a></li>";
         echo "<li style=\"float:right\"><a href=\"logout.php\" class=\"nav-bar-item\">Logout</a></li>";
+		echo "<div>
+		<button class=\"searchbtn\" type=\"submit\"/>Search</button>
+		  <input class=\"searchbar\" type=\"text\" placeholder=\"Search Tickets...\" name=\"search\">
+		  
+	  </div>";
     }
     else {
        echo "<li style=\"float:right\"><a href=\"login.php\" class=\"nav-bar-item\">Login</a></li>";
@@ -77,44 +82,6 @@ if (!isset($_SESSION['loggedin'])) {
 		}
 	?>
 
-<div class="content">
-			<h2>Open Tickets</h2>
-			<div>
-				<p>Total Tickets: <?=$noTotal?></p>
-				<p>Total On Going Tickets: <?=$noOpen?></p>
-				<p>Your open tickets are below:</p>
-				<?php
-				$x = 1; //used to repeat while statement
-				$y = 0; //used to create variable names
-
-				while($x <= $noOpen) {
-					${"statusTxt".$y} ='';
-					if (${"status".$y} == 1){
-						${"statusTxt".$y} = 'Open';
-					}
-					else if (${"status".$y} == 2){
-						${"statusTxt".$y} = 'Pending';
-					}
-					else if (${"status".$y} == 3){
-						${"statusTxt".$y} = 'On Hold';
-					}
-					else {
-						//ticket is closed, do not display
-					}
-				echo "<table>
-				<tr>
-                    <a href=\"${"ticketId".$y}.php\">Ticket Link</a>
-					<td>Ticket ID: ${"ticketId".$y} </td>
-					<td>Status: ${"statusTxt".$y} </td>
-					<td>Current Owner: ${"userownerName".$y} </td>
-				</tr>
-				</table>";
-				$y++;
-				$x++;
-				}
-				?>
-			</div>
-		</div>
 
 </html>
 

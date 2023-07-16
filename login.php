@@ -23,11 +23,11 @@
     <hr>
     <label for="email"><b>Username</b></label>
     <br>
-    <input type="text" placeholder="Enter Username" name="username" required>
+    <input class="username_enter" type="text" placeholder="Enter Username" name="username" required>
     <br>
     <label for="psw"><b>Password</b></label>
     <br>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    <input class="psw_enter" type="password" placeholder="Enter Password" name="psw" required>
     <br>
     <label>
       <input type="checkbox" name="remember" style="margin-bottom:15px"> Remember me

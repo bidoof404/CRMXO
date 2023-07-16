@@ -23,6 +23,7 @@ session_start();
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         echo "<li><a href=\"tickets.php\" class=\"nav-bar-item\">Tickets</a></li>";
         echo "<li><a href=\"createticket.php\" class=\"nav-bar-item\">Create Ticket</a></li>";
+        echo "<li><a href=\"ticketview.php\" class=\"nav-bar-item\">Ticket View</a></li>";
         echo "<li style=\"float:right\"><a href=\"logout.php\" class=\"nav-bar-item\">Logout</a></li>";
     }
     else {

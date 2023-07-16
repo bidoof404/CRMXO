@@ -23,6 +23,7 @@ session_start();
     <li style=" background-color: green; color: black;"><a href="createticket.php" class="nav-bar-item">Create Ticket</a></li>
     <?php
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+      echo "<li><a href=\"ticketview.php\" class=\"nav-bar-item\">Ticket View</a></li>";
         echo "<li style=\"float:right\"><a href=\"logout.php\" class=\"nav-bar-item\">Logout</a></li>";
     }
     else {
@@ -39,15 +40,15 @@ session_start();
         <hr>
         <label for="subject"><b>Subject</b></label>
         <br>
-        <input type="text" placeholder="Enter Subject" name="subject" required>
+        <input class="subject_enter" type="text" placeholder="Enter Subject" name="subject" required>
         <br>
         <label for="desc"><b>Description of Issue</b></label>
         <br>
-        <input type="text" placeholder="Enter Ticket Description/Message" name="desc" required>
-        <p>Due Date</p>
+        <textarea class="desc_enter" type="text" placeholder="Enter Ticket Description/Message" name="desc" required></textarea>
+        <br>
+        <label for="dDate"><b>Due Date</b></label>
+        <br>
         <input for="dueDate" type="date" name="dueDate">
-        <br>
-        <br>
         <label>
         </label>
   
@@ -77,7 +78,7 @@ session_start();
     
     if ( !isset($_POST['subject'],$_POST['desc'], $_POST['dueDate']) ) {
       // Could not get the data that should have been sent.
-      exit('<br></br>Please fill the Subject, Description and Due Date fields.');
+      exit();
     }
     $subject = ($_POST['subject']);
     $desc = ($_POST['desc']);

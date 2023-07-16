@@ -18,25 +18,25 @@
 </ul>
 
     <form method="post">
+      <div class="signupform">
         <signupform>
         <h1>Sign Up</h1>
         <p>Please fill in this form to create an account.</p>
-        <hr>
         <label for="email"><b>Email</b></label>
         <br>
-        <input type="text" placeholder="Enter Email" name="email" required>
+        <input class = "email_enter" type="text" placeholder="Enter Email" name="email" required>
         <br>
-        <label for="email"><b>Username</b></label>
+        <label for="username"><b>Username</b></label>
         <br>
-        <input type="text" placeholder="Enter Username" name="username" required>
+        <input class = "username_enter" type="text" placeholder="Enter Username" name="username" required>
         <br>
         <label for="psw"><b>Password</b></label>
         <br>
-        <input type="password" placeholder="Enter Password" name="psw" required>
+        <input class = "psw_enter" type="password" placeholder="Enter Password" name="psw" required>
         <br>
         <label for="psw-repeat"><b>Repeat Password</b></label>
         <br>
-        <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+        <input class = "pswrepeat_enter" type="password" placeholder="Repeat Password" name="psw-repeat" required>
         <label>
           <input type="checkbox" name="remember" style="margin-bottom:15px"> Remember me
         </label>
@@ -47,6 +47,7 @@
           <button type="button" onclick="location.href='index.php'" class="cancelbtn">Cancel</button>
           <button type="submit" class="signupbtn" name="signupbtn">Sign Up</button>
         </signupform>
+      </div>
     </form>
 
 </body>
@@ -67,7 +68,7 @@
     
     if ( !isset($_POST['email'],$_POST['username'], $_POST['psw']) ) {
       // Could not get the data that should have been sent.
-      exit('<br></br>Please fill the username, email and password fields.');
+      exit();
     }
     $username = ($_POST['username']);
     $email = ($_POST['email']);
